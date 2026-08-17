@@ -8,22 +8,22 @@ class TeacherController extends Controller
 {
     public function index()
     {
-        return "Menampilkan halaman daftar guru";
+        return view('teachers.index');
     }
 
     public function show(string $id)
     {
-        return "Menampilkan guru dengan ID: {$id}";
+        return view('teachers.show', compact('id'));
     }
 
     public function create()
     {
-        return "Menampilkan halaman tambah guru";
+        return view('teachers.create');
     }
 
     public function edit(string $id)
     {
-        return "Menampilkan halaman edit guru";
+        return view('teachers.edit');
     }
 
     public function store()
