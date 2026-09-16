@@ -11,7 +11,8 @@
 
         <h1 class="font-display mt-2 text-3xl font-semibold text-[#16213A]">Ubah Data Kelas</h1>
 
-        <p class="mt-1 text-sm text-slate-500">Memperbarui catatan dengan nama kelas <span class="font-medium text-[#16213A]">XII AKL 1</span>.</p>
+        <p class="mt-1 text-sm text-slate-500">Memperbarui catatan dengan nama kelas <span
+                class="font-medium text-[#16213A]">XII AKL 1</span>.</p>
 
     </div>
 
@@ -21,12 +22,12 @@
 
         <div>
 
-            <label for="class"
-                class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Nama Kelas</label>
+            <label for="class" class="mb-1.5 block text-xs font-semibold uppercase tracking-widest text-[#16213A]">Nama
+                Kelas</label>
 
             <input type="text" id="code" name="code" placeholder="Contoh: XII AKL 1" value="XII AKL 1"
                 class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm placeholder:text-slate-400 focus:border-[#A16207] focus:bg-white focus:outline-none">
-    
+
         </div>
 
 
@@ -34,9 +35,9 @@
         <div>
 
             <label for="grade"
-                class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Tingkat</label>
+                class="mb-1.5 block text-xs font-semibold uppercase tracking-widest text-[#16213A]">Tingkat</label>
 
-            <select id="major" name="major"
+            <select id="grade" name="grade"
                 class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
 
                 <option value="">Pilih tingkat</option>
@@ -53,19 +54,18 @@
 
         <div>
 
-            <label for="major"
-                class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Jurusan</label>
+            <label for="major_id"
+                class="mb-1.5 block text-xs font-semibold uppercase tracking-widest text-[#16213A]">Jurusan</label>
 
-            <select id="major" name="major"
+            <select id="major_id" name="major_id"
                 class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
 
                 <option value="">Pilih jurusan</option>
-
-                <option value="" selected>AKL</option>
-
-                <option value="">TKJ</option>
-
-                <option value="">BD</option>
+                @foreach($majors as $major)
+                    <option value="{{ $major['id'] }}" @selected(($class['major_id'] ?? $class->major_id ?? null) == $major['id'])>
+                        {{ $major['code'] }}
+                    </option>
+                @endforeach
 
             </select>
 
@@ -73,17 +73,18 @@
 
         <div>
 
-            <label for="homeroom_teacher"
-                class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Wali Kelas</label>
+            <label for="teacher_id" class="mb-1.5 block text-xs font-semibold uppercase tracking-widest text-[#16213A]">Wali
+                Kelas</label>
 
-            <select id="homeroom_teacher" name="homeroom_teacher"
+            <select id="teacher_id" name="teacher_id"
                 class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
 
                 <option value="">Pilih wali kelas</option>
-
-                <option value="" selected>Budi Santoso</option>
-
-                <option value="">Siti Aminah</option>
+                @foreach($teachers as $teacher)
+                    <option value="{{ $teacher['id'] }}" @selected(($class['teacher_id'] ?? $class->teacher_id ?? null) == $teacher['id'])>
+                        {{ $teacher['name'] }}
+                    </option>
+                @endforeach
 
             </select>
 

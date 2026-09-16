@@ -53,15 +53,15 @@
 
         <div>
 
-            <label for="major"
+            <label for="major_id"
                 class="mb-1.5 block text-xs font-semibold uppercase tracking-widest text-[#16213A]">Jurusan</label>
 
-            <select id="major" name="major"
+            <select id="major_id" name="major_id"
                 class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
 
                 <option value="">Pilih jurusan</option>
                 @foreach($majors as $major)
-                    <option value="{{ $major['code'] }}">{{ $major['code'] }}</option>
+                    <option value="{{ $major['id'] }}">{{ $major['code'] }}</option>
                 @endforeach
             </select>
 
@@ -69,15 +69,15 @@
 
         <div>
 
-            <label for="homeroom_teacher"
+            <label for="teacher_id"
                 class="mb-1.5 block text-xs font-semibold uppercase tracking-widest text-[#16213A]">Wali Kelas</label>
 
-            <select id="homeroom_teacher" name="homeroom_teacher"
+            <select id="teacher_id" name="teacher_id"
                 class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
 
                 <option value="">Pilih wali kelas</option>
                 @foreach($teachers as $teacher)
-                    <option value="{{ $teacher['name'] }}">{{ $teacher['name'] }}</option>
+                    <option value="{{ $teacher['id'] }}">{{ $teacher['name'] }}</option>
                 @endforeach
 
             </select>
