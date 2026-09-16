@@ -22,7 +22,7 @@
         <div>
 
             <label for="code"
-                class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Kode Jurusan</label>
+                class="mb-1.5 block text-xs font-semibold uppercase tracking-widest text-[#16213A]">Kode Jurusan</label>
 
             <input type="text" id="code" name="code" placeholder="Contoh: AKL" value="AKL"
                 class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm placeholder:text-slate-400 focus:border-[#A16207] focus:bg-white focus:outline-none">
@@ -33,7 +33,7 @@
 
         <div>
 
-            <label for="name" class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Nama
+            <label for="name" class="mb-1.5 block text-xs font-semibold uppercase tracking-widest text-[#16213A]">Nama
 
                 Jurusan</label>
 
@@ -44,11 +44,11 @@
 
         <div>
 
-            <label for="name" class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Deskripsi</label>
+            <label for="description" class="mb-1.5 block text-xs font-semibold uppercase tracking-widest text-[#16213A]">Deskripsi</label>
 
-            <input type="text" id="name" name="name" placeholder="Deskripsi jurusan" value="Program keahlian yang membekali murid dengan kompetensi pencatatan dan pelaporan keuangan."
+            <textarea id="description" name="description" placeholder="Deskripsi jurusan" value="Program keahlian yang membekali murid dengan kompetensi pencatatan dan pelaporan keuangan."
                 class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm placeholder:text-slate-400 focus:border-[#A16207] focus:bg-white focus:outline-none">
-
+            </textarea>
         </div>
 
 

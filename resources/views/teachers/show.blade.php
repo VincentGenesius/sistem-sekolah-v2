@@ -20,33 +20,33 @@
 
         <dl class="divide-y divide-[#EFEDE6] text-sm">
             <div class="flex justify-between px-8 py-4">
-                <dt class="uppercase tracking-[0.1em] text-xs text-slate-400">NIP</dt>
+                <dt class="uppercase tracking-widest text-xs text-slate-400">NIP</dt>
                 <dd class="font-medium text-[#16213A]">{{ $teacher['nip'] ?? '198501012024' }}</dd>
             </div>
 
             <div class="flex justify-between px-8 py-4">
-                <dt class="uppercase tracking-[0.1em] text-xs text-slate-400">Nama Lengkap</dt>
+                <dt class="uppercase tracking-widest text-xs text-slate-400">Nama Lengkap</dt>
                 <dd class="font-medium text-[#16213A]">{{ $teacher['name'] ?? 'Budi Santoso' }}</dd>
             </div>
 
             <div class="flex justify-between px-8 py-4">
-                <dt class="uppercase tracking-[0.1em] text-xs text-slate-400">Jenis Kelamin</dt>
+                <dt class="uppercase tracking-widest text-xs text-slate-400">Jenis Kelamin</dt>
                 <dd class="font-medium text-[#16213A]">{{ $teacher['gender'] ?? 'Laki-laki' }}</dd>
             </div>
 
             <div class="flex justify-between px-8 py-4">
-                <dt class="uppercase tracking-[0.1em] text-xs text-slate-400">Mata Pelajaran</dt>
+                <dt class="uppercase tracking-widest text-xs text-slate-400">Mata Pelajaran</dt>
                 <dd class="font-medium text-[#16213A]">{{ $teacher['subject'] ?? 'Akuntansi Dasar' }}</dd>
             </div>
 
             <div class="flex justify-between px-8 py-4">
-                <dt class="uppercase tracking-[0.1em] text-xs text-slate-400">No. Telepon</dt>
+                <dt class="uppercase tracking-widest text-xs text-slate-400">No. Telepon</dt>
                 <dd class="font-medium text-[#16213A]">{{ $teacher['phone'] ?? '081234560001' }}</dd>
             </div>
 
             <!-- Terapkan Custom Component di sini -->
             <div class="flex justify-between items-center px-8 py-4">
-                <dt class="uppercase tracking-[0.1em] text-xs text-slate-400">Status</dt>
+                <dt class="uppercase tracking-widest text-xs text-slate-400">Status</dt>
                 <dd class="font-medium">
                     <x-status-badge :status="$teacher['status'] ?? 'Aktif'" />
                 </dd>
