@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Student;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
@@ -9,29 +10,7 @@ class StudentController extends Controller
     public function index()
     {
         $title = "Sistem Sekolah - Daftar Siswa";
-        $students = [
-            [
-                "id"=> 1,
-                "nis"=> "1001",
-                "name"=> "Andi",
-                "class"=> "XII TKJ 1",
-                "major"=> "TKJ"
-            ],
-            [
-                "id"=> 2,
-                "nis"=> "1002",
-                "name"=> "Budi",
-                "class"=> "XII TKJ 2",
-                "major"=> "TKJ"
-            ],
-            [
-                "id"=> 3,
-                "nis"=> "1003",
-                "name"=> "Nina",
-                "class"=> "XII TKJ 3",
-                "major"=> "TKJ"
-            ],
-        ];
+        $students = Student::select('id', 'nis', 'name', 'class', 'major')->get();
 
         return view('students.index', [
             'title'=> $title,
@@ -68,7 +47,18 @@ class StudentController extends Controller
 
     public function store()
     {
-        return "Melakukan penambahan data siswa";
+        $validatedRequests = request()->validate([
+            'nis' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'string', 'size:4', 'unique:students,nis'],
+            'gender' => ['required', 'string','in:L,P'],
+            'class' => ['required', 'string', 'max:50'],
+            'major' => ['required', 'string', 'in:AKL,BiD,TKJ'],
+        ]);
+
+        Student::create($validatedRequests);
+
+        return redirect()->route('students.index')
+            ->with('success', 'Berhasil Menambahkan Data Siswa Baru');
     }
 
     public function update(string $id)
