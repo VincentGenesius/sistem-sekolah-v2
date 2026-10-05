@@ -60,9 +60,9 @@
 
                 <option value="">Pilih Jenis Kelamin</option>
 
-                <option @selected(old('gender') === 'L') value="L">Laki-laki</option>
+                <option @selected(old('gender') === 'Laki-laki') value="Laki-laki">Laki-laki</option>
 
-                <option @selected(old('gender') === 'P') value="P">Perempuan</option>
+                <option @selected(old('gender') === 'Perempuan') value="Perempuan">Perempuan</option>
 
             </select>
 
