@@ -4,11 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Table;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 #[Table('students')]
 #[Fillable('nis', 'name', 'class', 'major', 'gender')]
 class Student extends Model
 {
-    //
+    use HasFactory;
 }
