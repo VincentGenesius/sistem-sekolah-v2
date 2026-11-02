@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\SchoolClass\IndexController;
@@ -15,6 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// AUTHENTICATION ROUTES
+Route::get('/login', [AuthController::class, 'loginView'])->name('login-view');
+Route::post('/login', [AuthController::class, 'loginPost'])->name('login-post');
+Route::get('/register', [AuthController::class, 'registerView'])->name('register-view');
+Route::post('/register', [AuthController::class, 'registerPost'])->name('register-post');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // TEACHER ROUTES (ACTION)
 Route::name('teachers.')->prefix('teachers')->group(function () {
